@@ -7,8 +7,7 @@ Flow Rate Sensor
 byte sensorInterrupt = 0;  // 0 = digital pin 2
 byte sensorPin       = 19; // Free pin on Teensy (19, 18, or 39)
 
-// calibrationFactor is a scalar value that calibrates voltage reading to a flow value;
-// 8 for Sensirion, 16 for low-flow meter
+// calibrationFactor is a scalar value that converts voltage reading to a flow value
 float calibrationFactor = 16; 
 
 volatile byte pulseCount;  
