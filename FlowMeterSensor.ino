@@ -25,7 +25,6 @@ void setup()
   Serial.begin(38400);
    
   // pinMode(statusLed, OUTPUT);
-  // digitalWrite(statusLed, HIGH);  // We have an active-low LED attached
   
   pinMode(sensorPin, INPUT);
   digitalWrite(sensorPin, HIGH);
@@ -63,24 +62,12 @@ void loop()
     // totalMilliLitres += flowMilliLitres;
       
     unsigned int frac;
-    
-    // Print the flow rate for this second in litres / minute
-    // Serial.print("Flow rate: ");
-    // Serial.print(int(flowRate));  // Print the integer part of the variable
-    // Serial.print(".");             // Print the decimal point
-    // Determine the fractional part. The 10 multiplier gives us 1 decimal place.
+
     frac = (flowRate - int(flowRate)) * 10;
-    // Serial.print(frac, DEC) ;      // Print the fractional part of the variable
-    // Serial.print("L/min");
     // Print the number of litres flowed in this second
     Serial.print("Flow Rate: ");             // Output separator
     Serial.print(flowMilliLitres);
     Serial.print("mL/Sec");
-
-    // Print the cumulative total of litres flowed since starting
-    // Serial.print("  Output Liquid Quantity: ");             // Output separator
-    // Serial.print(totalMilliLitres);
-    // Serial.println("mL"); 
 
     // Reset the pulse counter so we can start incrementing again
     pulseCount = 0;
